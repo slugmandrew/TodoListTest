@@ -17,23 +17,23 @@ public class HomePageView extends ViewImpl implements HomePagePresenter.MyView
     {
     }
 
-    @UiField
-    PaperIconItem menuClearAll, menuClearDone, menuSettings, menuAbout;
-
-    @UiField
-    PaperDrawerPanel drawerPanel;
-
-    @UiField
-    HTMLPanel content;
-
-    @UiField
-    PaperDialog addItemDialog;
-
-    @UiField
-    PaperInput titleInput;
-
-    @UiField
-    PaperTextarea descriptionInput;
+//    @UiField
+//    PaperIconItem menuClearAll, menuClearDone, menuSettings, menuAbout;
+//
+//    @UiField
+//    PaperDrawerPanel drawerPanel;
+//
+//    @UiField
+//    HTMLPanel content;
+//
+//    @UiField
+//    PaperDialog addItemDialog;
+//
+//    @UiField
+//    PaperInput titleInput;
+//
+//    @UiField
+//    PaperTextarea descriptionInput;
 
 //    @UiField
 //    PaperButton button;
@@ -45,29 +45,29 @@ public class HomePageView extends ViewImpl implements HomePagePresenter.MyView
 
     }
 
-    @UiHandler("addButton")
-    protected void onAddButtonClick(ClickEvent e)
-    {
-        addItemDialog.open();
-    }
-
-    @UiHandler("confirmAddButton")
-    protected void onConfirmAddButtonClick(ClickEvent e)
-    {
-        if (!titleInput.getValue().isEmpty()) {
-            addItem(titleInput.getValue(), descriptionInput.getValue());
-            // clear text fields
-            titleInput.setValue("");
-            descriptionInput.setValue("");
-        }
-    }
-
-    private void addItem(String title, String description)
-    {
-        Item item = new Item();
-        item.setTitle(title);
-        item.setDescription(description);
-        content.add(item);
-    }
+//    @UiHandler("addButton")
+//    protected void onAddButtonClick(ClickEvent e)
+//    {
+//        addItemDialog.open();
+//    }
+//
+//    @UiHandler("confirmAddButton")
+//    protected void onConfirmAddButtonClick(ClickEvent e)
+//    {
+//        if (!titleInput.getValue().isEmpty()) {
+//            addItem(titleInput.getValue(), descriptionInput.getValue());
+//            // clear text fields
+//            titleInput.setValue("");
+//            descriptionInput.setValue("");
+//        }
+//    }
+//
+//    private void addItem(String title, String description)
+//    {
+//        Item item = new Item();
+//        item.setTitle(title);
+//        item.setDescription(description);
+//        content.add(item);
+//    }
 
 }
