@@ -1,0 +1,12 @@
+{
+  "name": "TodoListTest",
+  "version": "1.0",
+  "authors": [
+    "Drew Spencer <slugmandrew@gmail.com>"
+  ],
+  "description": "testing polymer",
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "Polymer/polymer#1.0.0"
+  }
+}
