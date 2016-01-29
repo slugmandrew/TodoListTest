@@ -1,61 +1,25 @@
-<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-             xmlns:g='urn:import:com.google.gwt.user.client.ui'
-             xmlns:p='urn:import:com.vaadin.polymer.paper.widget'>
-    <ui:style>
-        @external .done;
-        .item .done {
-            text-decoration: line-through;
-        }
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'>
 
-        .title {
+    <div class="item vertical center-justified layout">
+        <style>
+            .title {
             padding-left: 20px;
             font-size: 150%;
             font-weight: normal;
-        }
-
-        .description {
-
-        }
-    </ui:style>
-    <g:HTMLPanel addStyleNames="vertical layout {style.item}">
-
-        <style is='custom-style'>
-
-            .horizontal-section-container {
-            @apply(--layout-horizontal);
-            @apply(--layout-center-justified);
-            @apply(--layout-wrap);
             }
-
-            .vertical-section-container {
-            @apply(--layout-vertical);
-            @apply(--center-justified);
+            .done {
+            text-decoration: line-through;
             }
-
-            .horizontal-section {
-            background-color: white;
-            padding: 24px;
-            margin-right: 24px;
-            min-width: 200px;
-            @apply(--shadow-elevation-2dp);
+            .paper-checkbox {
+            top: -2px;
             }
-
-            .vertical-section {
-            background-color: white;
-            padding: 24px;
-            margin: 0 24px 24px 24px;
-            @apply(--shadow-elevation-2dp);
-            }
-
-
         </style>
-
         <div class="vertical-section">
             <h4>
-                <p:PaperCheckbox ui:field="done"></p:PaperCheckbox>
-                <span ui:field="title" class='{style.title}'>Go to Google</span>
+                <paper-checkbox ui:field="done"/>
+                <span ui:field="title" class="title">Go to Google</span>
             </h4>
-            <div ui:field="description" class='{style.description}'></div>
+            <div ui:field="description"/>
         </div>
-    </g:HTMLPanel>
+    </div>
 </ui:UiBinder>

@@ -8,12 +8,15 @@
     <!-- Default css -->
     <inherits name='com.google.gwt.user.theme.standard.Standard'/>
 
+    <inherits name="com.google.common.collect.Collect"/>
+
     <!-- Other module inherits -->
     <inherits name='com.gwtplatform.dispatch.Dispatch'/>
     <inherits name='com.gwtplatform.mvp.MvpWithEntryPoint'/>
 
-    <inherits name="org.gwtbootstrap3.GwtBootstrap3Theme"/>
+    <!--<inherits name="org.gwtbootstrap3.GwtBootstrap3Theme"/>-->
     <inherits name="com.vaadin.polymer.Elements"/>
+
 
     <!-- For development, a default of `DEBUG` is recommended -->
     <inherits name="com.allen_sauer.gwt.log.gwt-log-DEBUG" />
@@ -25,12 +28,12 @@
     <source path='shared'/>
 
     <!-- GwtBootrap3 setup -->
-    <public path='resource'>
-        <include name='css/*.css' />
-        <include name='js/*.js' />
-    </public>
+    <!--<public path='resource'>-->
+        <!--<include name='css/*.css' />-->
+        <!--<include name='js/*.js' />-->
+    <!--</public>-->
 
-    <stylesheet src='css/paper.css' />
+    <!--<stylesheet src='css/paper.css' />-->
 
     <set-configuration-property name="gin.ginjector.modules" value="com.usav.todo.client.gin.ClientModule"/>
 

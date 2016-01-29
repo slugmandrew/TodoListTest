@@ -10,6 +10,30 @@
     <name>GWTP AppEngine Basic</name>
     <description>Basic GWTP application using App Engine</description>
 
+    <repositories>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+
+        <repository>
+            <id>google-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/google-snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
     <properties>
         <!-- client -->
         <gwt.version>2.8.0-beta1</gwt.version>
@@ -27,7 +51,7 @@
         <persistence-api.version>1.0.2</persistence-api.version>
         <servlet-api.version>2.5</servlet-api.version>
         <javax.validation.version>1.0.0.GA</javax.validation.version>
-        <guava-version>18.0</guava-version>
+        <guava-version>20.0-SNAPSHOT</guava-version>
 
         <!-- testing -->
         <junit.version>4.12</junit.version>
@@ -115,7 +139,7 @@
                     <extraJvmArgs>-Xss1g -Xmx1g -Dappengine.sdk.root=${mvn.gae.home} -Ddatastore.default_high_rep_job_policy_unapplied_job_pct=20
                     </extraJvmArgs>
 
-                    <jsInteropMode>JS</jsInteropMode>
+                    <!--<jsInteropMode>JS</jsInteropMode>-->
 
                     <!--<appEngineHome>${gae.home}</appEngineHome>-->
                     <port>8888</port>
@@ -170,16 +194,16 @@
 
 
         <!-- Guava -->
-        <!--<dependency>-->
-            <!--<groupId>com.google.guava</groupId>-->
-            <!--<artifactId>guava</artifactId>-->
-            <!--<version>${guava-version}</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.google.guava</groupId>-->
-            <!--<artifactId>guava-gwt</artifactId>-->
-            <!--<version>${guava-version}</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava-gwt</artifactId>
+            <version>${guava-version}</version>
+        </dependency>
 
         <!-- GWT-Platform dependencies -->
         <dependency>
@@ -295,21 +319,13 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- GwtBootstrap3 -->
-        <dependency>
-            <groupId>org.gwtbootstrap3</groupId>
-            <artifactId>gwtbootstrap3</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
         <!-- GWT Polymer -->
         <dependency>
             <groupId>com.vaadin.polymer</groupId>
             <artifactId>vaadin-gwt-polymer-elements</artifactId>
-            <version>1.0.2.0-alpha3</version>
+            <version>1.2.3.0</version>
             <scope>provided</scope>
         </dependency>
-
 
         <!-- GWT Log -->
         <dependency>

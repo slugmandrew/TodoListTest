@@ -1,19 +1,19 @@
 package com.usav.todo.client.widget;
 
 import com.google.gwt.core.shared.GWT;
+import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HTMLPanel;
-import com.vaadin.polymer.iron.widget.event.IronChangeEvent;
-import com.vaadin.polymer.paper.widget.PaperCheckbox;
+import com.vaadin.polymer.elemental.Event;
+import com.vaadin.polymer.elemental.EventListener;
+import com.vaadin.polymer.paper.PaperCheckboxElement;
 
-public class Item extends Composite
+public class Item
 {
+    private final DivElement element;
 
-    interface ItemUiBinder extends UiBinder<HTMLPanel, Item>
+    interface ItemUiBinder extends UiBinder<DivElement, Item>
     {
     }
 
@@ -26,21 +26,27 @@ public class Item extends Composite
     Element description;
 
     @UiField
-    PaperCheckbox done;
+    PaperCheckboxElement done;
 
     public Item()
     {
-        initWidget(ourUiBinder.createAndBindUi(this));
-    }
+        element = ourUiBinder.createAndBindUi(this);
 
-    @UiHandler("done")
-    protected void change(IronChangeEvent ev)
-    {
-        if (done.getActive()) {
-            title.addClassName("done");
-        } else {
-            title.removeClassName("done");
-        }
+        done.addEventListener("iron-change", new EventListener()
+        {
+            @Override
+            public void handleEvent(Event event)
+            {
+                if(done.getActive())
+                {
+                    title.addClassName("done");
+                }
+                else
+                {
+                    title.removeClassName("done");
+                }
+            }
+        });
     }
 
     public String getTitle()
@@ -71,5 +77,10 @@ public class Item extends Composite
     public void setDone(boolean b)
     {
         done.setActive(b);
+    }
+
+    public DivElement getElement()
+    {
+        return element;
     }
 }
