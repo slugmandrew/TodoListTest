@@ -54,7 +54,7 @@
         <guava-version>20.0-SNAPSHOT</guava-version>
 
         <!-- testing -->
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <jukito.version>1.4.1</jukito.version>
 
         <!-- maven -->
